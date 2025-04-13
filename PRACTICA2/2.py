@@ -21,13 +21,16 @@ class persona:
         self.nacionalidad = "peruana"
 
     def mostrar_saldo(self):
-        print("{} tiene un saldo actual de: S/ {:.2f}".format(self.nombre, self.__saldo))
+        print("{} tiene un saldo actual de: "
+              "S/ {:.2f}".format(self.nombre, self.__saldo))
 
     def transferir(self, monto, destino):
         if self.__saldo >= monto:
             self.__saldo -= monto
+
             destino.aumentar_saldo(monto)
             print("transferencia de S/ {:.2f} realizada de {} a {}.".format(monto, self.nombre, destino.nombre))
+
         else:
             print("Saldo insuficiente para realizar la transferencia.")
 
@@ -36,6 +39,7 @@ class persona:
 
 
 class empleado(persona):
+
     def aumento_sueldo(self):
         self.sueldo += self.sueldo * 0.30
 
@@ -43,7 +47,8 @@ empleado1 = empleado()
 print("\n-- datos del primer empleado --")
 empleado1.registrar_persona()
 empleado1.aumento_sueldo()
-print("{} tiene un sueldo actualizado de: S/ {:.2f}".format(empleado1.nombre, empleado1.sueldo))
+print("{} tiene un sueldo actualizado de:"
+      " S/ {:.2f}".format(empleado1.nombre, empleado1.sueldo))
 empleado1.mostrar_saldo()
 
 empleado2 = empleado()
@@ -72,11 +77,8 @@ while True:
     print("\n--- Saldos actuales ---")
     empleado1.mostrar_saldo()
     empleado2.mostrar_saldo()
-
-    continuar = input("\n¿Desea realizar otra transferencia? (si/no): ").lower()
+    continuar = input("\n¿Desea realizar"
+                      " otra transferencia? (si/no): ").lower()
     if continuar != "si":
         print("Fin del programa.")
         break
-
-
-

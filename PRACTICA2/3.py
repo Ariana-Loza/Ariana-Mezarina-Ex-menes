@@ -77,7 +77,3 @@ print("\nResumen final")
 print("Titular: {} {}".format(nombre, apellido))
 print("Saldo final en soles: S/ {:.2f}".format(cuenta_soles))
 print("Saldo final en dólares: $ {:.2f}".format(cuenta_dolares))
-
-
-
-
